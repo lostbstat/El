@@ -4,6 +4,27 @@
 <title>Electricity AI Assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="style.css"></head><body>
+<section id="authPage" class="auth-page" aria-labelledby="authTitle">
+  <div class="card auth-card">
+    <div class="auth-brand">⚡ Electricity AI</div>
+    <h1 id="authTitle">เข้าสู่ระบบ</h1>
+    <p class="note" id="authIntro">ใช้บัญชีเดิมกลับมาวิเคราะห์ค่าไฟได้ทุกครั้ง</p>
+    <div class="auth-tabs" role="group" aria-label="เลือกเข้าสู่ระบบหรือสมัครสมาชิก">
+      <button type="button" id="loginTab" aria-pressed="true">เข้าสู่ระบบ</button>
+      <button type="button" id="registerTab" class="g" aria-pressed="false">สมัครสมาชิก</button>
+    </div>
+    <form id="authForm">
+      <div id="nameField" hidden><label for="authName">ชื่อที่ใช้แสดง</label><input id="authName" maxlength="80" autocomplete="nickname"></div>
+      <label for="authEmail">อีเมล</label><input id="authEmail" type="email" required maxlength="254" autocomplete="username" placeholder="you@example.com">
+      <label for="authPassword">รหัสผ่าน</label><input id="authPassword" type="password" required minlength="8" maxlength="128" autocomplete="current-password" placeholder="อย่างน้อย 8 ตัวอักษร">
+      <div id="confirmField" hidden><label for="authConfirm">ยืนยันรหัสผ่าน</label><input id="authConfirm" type="password" minlength="8" maxlength="128" autocomplete="new-password"></div>
+      <button type="submit" id="authSubmit" disabled>เข้าสู่ระบบ</button>
+    </form>
+    <p id="authMessage" class="auth-message" role="status" aria-live="polite">กำลังเชื่อมต่อ...</p>
+  </div>
+</section>
+<div id="appShell" hidden>
+<div class="account-bar"><span>⚡ Electricity AI</span><span id="accountName"></span><button type="button" id="logoutButton" class="g">ออกจากระบบ</button></div>
 <nav><button id="n0" class="on" onclick="go(0)"></button><button id="n1" onclick="go(1)"></button><button id="n2" onclick="go(2)"></button><button id="n3" onclick="go(3)"></button><button id="n4" onclick="go(4)"></button><button id="n5" onclick="go(5)"></button><button id="n6" onclick="go(6)"></button><button id="nt" title="Theme" aria-label="Theme" onclick="$('thm').hidden=!$('thm').hidden">🎨</button></nav>
 <div class="card" id="thm" hidden><h2 data-i="tk"></h2><div class="row"><input type="color" id="pick" value="#b8a9e8" aria-label="color"><div id="sws" class="row" style="margin:0;gap:8px"></div></div><div class="note" data-i="tp"></div><div class="row"><button class="g" data-m="auto" data-i="ta"></button><button class="g" data-m="light" data-i="tl"></button><button class="g" data-m="dark" data-i="td"></button><button class="g" id="trs" data-i="tkr" style="margin-left:auto"></button></div></div>
 
@@ -70,4 +91,4 @@
 <div class="card ai"><h2 data-i="so_ct"></h2><div class="note" data-i="so_cn"></div><div id="co"></div><div class="row"><button id="cb" onclick="cmpAI()" data-i="so_ai"></button></div><div class="t" id="cv"></div></div>
 </section>
 
-<script src="script.js"></script></body></html>
+</div><script src="script.js"></script></body></html>
